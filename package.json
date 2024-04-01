@@ -1,0 +1,42 @@
+{
+  "author": "anonymous",
+  "devDependencies": {
+    "@iconify/svelte": "^3.1.6",
+    "@sveltejs/adapter-node": "^1.0.0-next.101",
+    "@sveltejs/adapter-static": "^1.0.0-next.48",
+    "@sveltejs/kit": "^1.0.0-next.562",
+    "autoprefixer": "^10.4.16",
+    "concurrently": "^6.5.1",
+    "electron": "^12.2.3",
+    "electron-builder": "^22.14.13",
+    "electron-reloader": "^1.2.3",
+    "postcss": "^8.4.32",
+    "sass": "^1.56.1",
+    "svelte": "^3.53.1",
+    "svelte-preprocess": "^4.10.7",
+    "tailwindcss": "^3.3.6",
+    "vite": "^4.0.4"
+  },
+  "license": "",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.1",
+    "bootstrap": "^5.3.2",
+    "electron-serve": "^1.1.0",
+    "electron-window-state": "^5.0.3",
+    "html5-qrcode": "^2.3.8"
+  },
+  "main": "src/electron.cjs",
+  "scripts": {
+    "dev": "vite dev",
+    "package": "npm run build && electron-builder --config electron-builder.config.json",
+    "dev:package": "npm run build && electron-builder --config electron-builder.config.json --dir",
+    "electron": "concurrently --kill-others \"vite dev\" \"electron src/electron.cjs\"",
+    "preview": "vite preview",
+    "build": "vite build"
+  },
+  "version": "1.0.0",
+  "name": "asiscan",
+  "type": "module",
+  "description": "Electron and SvelteKit integration"
+}
